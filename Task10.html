@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form validation</title>
+    
+</head>
+<body>
+    <form >
+        <label for="fname">FirstName</label>
+        <input type="text" id="fname"><br>
+        <label for="lname">LastName</label>
+        <input type="text" id="lname"><br>
+        <label for="phonenumber">PhoneNumber</label>
+        <input type="tel" id="phone" maxlength="10"><br>
+        <label for="username">UserName</label>
+        <input type="text" id="username" name="username" required><br>
+        <label for="pwd">Password:</label>
+        <input type="password" id="pwd" name="pwd"
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+        title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters">
+        <input type="submit">
+    </form>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bio-Data Form</title>
+    <script>
+      function handleSubmit(event) {
+        event.preventDefault();
+
+        const firstname = document.getElementById("Fname").value;
+        const lastname = document.getElementById("Lname").value;
+        const Dob = document.getElementById("dob").value;
+
+        let gender = "";
+        if (document.getElementById("Mgen").checked) {
+          gender = document.getElementById("Mgen").value;
+        } else if (document.getElementById("Fgen").checked) {
+          gender = document.getElementById("Fgen").value;
+        }
+
+        const graduation = document.getElementById("grade").value;
+
+        const mobile = document.getElementById("Phone").value;
+
+        const output = (
+          `
+            <p>First Name: ${firstname}</p>
+            <p>Last Name: ${lastname}</p>
+            <p>Date of Birth: ${Dob}</p>
+            <p>Gender: ${gender}</p>
+            <p>Graduation: ${graduation}</p>
+            <p>Age: ${mobile}</p>
+          `
+        );
+        document.getElementById("bio").innerHTML = output;
+      }
+    </script>
+  </head>
+  <body>
+    <form onsubmit="handleSubmit(event)">
+      <fieldset>
+        <legend>My Details</legend>
+        <label for="fname">FirstName</label>
+        <input type="text" id="Fname" /><br />
+        <label for="lname">LastName</label>
+        <input type="text" id="Lname" /><br />
+        <label for="DOB">Date of Birth</label>
+        <input type="date" id="dob" /><br />
+        <label for="gender">Gender</label>
+        <input type="radio" id="Mgen" name="Gender" value="Male" />Male
+        <input
+          type="radio"
+          id="Fgen"
+          name="Gender"
+          value="Female"
+        />Female<br />
+        <label for="graduation">Graduation</label>
+        <select id="grade">
+          <option value="MCA" id="mca">MCA</option>
+          <option value="BCA" id="bca">BCA</option></select
+        ><br />
+        <label for="Age">Age</label>
+        <input type="number" min="10" max="10" id="Phone" /><br />
+        <input type="checkbox" id="vechicle1" value="Bike" />
+        <label for="vechicle1">I have Bike</label><br />
+        <input type="checkbox" id="vechicle2" value="Car" />
+        <label for="vechicle2">i have car</label><br />
+        <label for="password">Set a password</label>
+        <input type="password" id="pass" />
+        <label for="file">Please upload the resume</label>
+        <input type="file" id="resume"><br>
+        <input type="submit" value="submit" />
+      </fieldset>
+      <textarea name="data" rows="30" cols="90" id="bio"></textarea>
+    </form>
+  </body>
+</html>

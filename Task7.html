@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mutlilevel Navigation</title>
+    <script>
+      function clickmenu() {
+        event.preventDefault();
+        const menuitem = `
+                <ul>
+          <li>
+            <a href="#chinese" onclick="clickchina()">Chinese</a>
+            <p id="china"></p>
+          </li>
+          <li>
+            <a href="#indian" onclick="clickindian()">Indian </a>
+            <p id="india"></p>
+          </li>
+          <li>
+            <a href="#Italian" onclick="clickitalian()">Italian</a>
+            <p id="italy"></p>
+          </li>
+        </ul>
+            `;
+        document.getElementById("output").innerHTML = menuitem;
+      }
+      function clickchina() {
+        event.preventDefault();
+        const chineseitem = `
+                        <ul>
+              <li>fired rice</li>
+              <li>noodles</li>
+            </ul>
+            `;
+        document.getElementById("china").innerHTML = chineseitem;
+        return true;
+      }
+      function clickindian() {
+        event.preventDefault();
+        const indianitem = `
+                      <ul>
+              <li>idly</li>
+              <li>dosa</li>
+            </ul>
+            `;
+        document.getElementById("india").innerHTML = indianitem;
+        return true;
+      }
+      function clickitalian() {
+        event.preventDefault();
+        const italianitem = `
+                  <ul>
+              <li>pasta</li>
+            </ul>
+            `;
+        document.getElementById("italy").innerHTML = italianitem;
+        return true;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Multilevel Navigation</h1>
+    <ul>
+      <li>
+        <a href="#MENU" onclick="clickmenu()">HOME</a>
+        <p id="output"></p>
+      </li>
+    </ul>
+  </body>
+</html>
